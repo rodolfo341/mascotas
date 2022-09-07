@@ -12,7 +12,7 @@ public class MascotaController {
 	@Autowired
 	private MascotaService mascotaService;
 	
-	@GetMapping({"","/","/estudiantes"})
+	@GetMapping({"","/","/mascotas"})
 	public String listAllMAscotas(Model model) {
 		model.addAttribute("mascotas",mascotaService.listAllMascotas());
 		return "mascotas";

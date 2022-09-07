@@ -3,7 +3,7 @@ package com.github.rodolfo341.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "estudiantes")
+@Table(name = "mascotas")
 public class Mascota {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,13 @@ public class Mascota {
 	
 	public Mascota() { }
 
+	public Mascota(String nombre, String raza, int edad) {
+		super();
+		this.nombre = nombre;
+		this.raza = raza;
+		this.edad = edad;
+	}
+	
 	public Mascota(long id, String nombre, String raza, int edad) {
 		super();
 		this.id = id;
