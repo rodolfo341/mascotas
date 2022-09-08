@@ -6,4 +6,5 @@ import com.github.rodolfo341.entity.Mascota;
 
 public interface MascotaService {
 	public List<Mascota> listAllMascotas();
+	public Mascota guardarMascota(Mascota mascota);
 }

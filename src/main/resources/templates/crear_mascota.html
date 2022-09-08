@@ -29,18 +29,33 @@
 				class="col-10 col-md-8 col-lg-6 container justify-content-center card shadow">
 				<h1 class="text-center">Registro de mascotas</h1>
 				<div class="card-body">
-					<form th:action="@{/estudiantes}" th:object="${estudiante}"
+					<form th:action="@{/mascotas}" th:object="${mascota}"
 						method="POST">
 						<div class="form-group">
-							<label for="">Nombre : </label> <input type="text" name="nombre"
-								th:field="*{nombre}" class="form-control mb-3"
-								placeholder="ingrese su nombre" required>
-							<label for="">Apellido : </label> <input type="text"
-								name="apellido" th:field="*{apellido}" class="form-control mb-3"
-								placeholder="ingrese su apellido" required>
-							<label for="">Email : </label> <input type="email" name="email"
-								th:field="*{email}" class="form-control mb-3"
-								placeholder="ingrese su email" required>
+							<label for="">Nombre : </label> 
+                            <input type="text" 
+                                    name="nombre"
+								    th:field="*{nombre}" 
+                                    class="form-control mb-3"
+								    placeholder="ingrese su nombre" 
+                                    required
+                            >
+							<label for="">Raza : </label> 
+                            <input type="text" 
+                                    name="raza" 
+                                    th:field="*{raza}" 
+                                    class="form-control mb-3"
+								    placeholder="ingrese su raza" 
+                                    required
+                            >
+							<label for="">Edad : </label> 
+                            <input type="number" 
+                                    name="edad"
+								    th:field="*{edad}" 
+                                    class="form-control mb-3"
+								    placeholder="ingrese su edad" 
+                                    required
+                            >
 							<div class="box-footer">
 								<button class="btn btn-success">Guardar</button>
 							</div>
