@@ -19,4 +19,24 @@ public class MascotaServiceImpl implements MascotaService {
 		return mascotaRepository.findAll();
 	}
 
+	@Override
+	public Mascota saveMascota(Mascota mascota) {		
+		return mascotaRepository.save(mascota);
+	}
+
+	@Override
+	public Mascota obtenerMascotaPorId(Long id) {
+		return mascotaRepository.findById(id).get();		
+	}
+
+	@Override
+	public Mascota actualizarMascota(Mascota mascota) {
+		return mascotaRepository.save(mascota);		
+	}
+
+	@Override
+	public void eliminarMascota(Long id) {
+		mascotaRepository.deleteById(id);		
+	}
+
 }
