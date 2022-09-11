@@ -9,6 +9,7 @@
 	rel="stylesheet"
 	integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
 	crossorigin="anonymous">
+    
 </head>
 
 <body>
@@ -32,18 +33,27 @@
 		<table class="table table-striped table-bordered">
 			<thead class="table-dark">
 				<tr>
+                    <th>Id</th>
 					<th>Nombre</th>
 					<th>Raza</th>
 					<th>Edad</th>
-					<th>Opciones</th>
+					<th style="width:230px;">Opciones</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="mascota: ${listaMascotas}">
+                    <td th:text="${mascota.id}"></td>
 					<td th:text="${mascota.nombre}"></td>
 					<td th:text="${mascota.raza}"></td>
 					<td th:text="${mascota.edad}"></td>
-					<td>Opciones</td>
+                    <td>
+                        <a th:href="@{/mascotas/editar/{id}(id=${mascota.id})}" class="btn btn-info ms-2">
+                            EDITAR
+                        </a>
+                        <a th:href="@{/mascotas/{id}(id=${mascota.id})}" class="btn btn-danger ms-3">
+                            ELIMINAR
+                        </a>
+                    </td>
 				</tr>
 			</tbody>
 		</table>
