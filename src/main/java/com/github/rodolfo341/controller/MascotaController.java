@@ -37,11 +37,11 @@ public class MascotaController {
 	
 	@GetMapping("/mascotas/editar/{id}")
 	public String mostrarFormularioDeEditar(@PathVariable Long id, Model model) {
-	model.addAttribute("mascota", mascotaService.obtenerMascotaPorId(id));
-	return "editar_mascota";
+		model.addAttribute("mascota", mascotaService.obtenerMascotaPorId(id));
+		return "editar_mascota";
 	}
 	
-	@PostMapping("/mascota/{id}")
+	@PostMapping("/mascotas/{id}")
 	public String actualizarMascota(@PathVariable Long id, @ModelAttribute("mascota") Mascota mascota, Model model) {
 		Mascota mascotaExistente = mascotaService.obtenerMascotaPorId(id);
 		mascotaExistente.setId(id);
@@ -49,7 +49,7 @@ public class MascotaController {
 		mascotaExistente.setRaza(mascota.getRaza());
 		mascotaExistente.setEdad(mascota.getEdad());
 		mascotaService.actualizarMascota(mascotaExistente);		
-		return "Redirect:/mascotas";
+		return "redirect:/mascotas";
 	}
 	
 	@GetMapping("/mascotas/{id}")
